@@ -1,0 +1,24 @@
+<!--<button class="btn btn-primary" (click)="CreateServer()" [disabled]="!allowNewServer">Add Server</button>-->
+<!--String Interpolation typically use when to output
+{{allowNewServer}}-->
+<!--Property Binding, typically use when to change some property-->
+<!--<p [innerText]="allowNewServer"></p>
+<p>{{ serverCreateStatus }}</p>-->
+
+<label>Server Name</label>
+<!--<input type="text" class="form-control" (input)="PrintValue($event)"/>-->
+<input type="text" class="form-control" [(ngModel)]="printvalue"/>
+<button class="btn btn-primary" (click)="CreateServer()">Add Server</button>
+<p *ngIf="allowNewServer">Server Created with Name: {{ printvalue }}</p>
+
+<p [ngStyle]="{backgroundColor:getColor()}"
+   [ngClass]="{textcolor:serverStatus==='online'}">Server Status: {{getServerStauts()}}</p>
+
+<!--<label class="col-md-12">Username:</label>
+<div class="col-md-6">
+    <input type="text" class="form-control" [(ngModel)]="username">
+</div>
+<div class="col-md-6">
+    <button class="btn btn-info" (click)="resetString()" [disabled]="username === ''">Reset</button>
+</div>
+{{ username }}-->
